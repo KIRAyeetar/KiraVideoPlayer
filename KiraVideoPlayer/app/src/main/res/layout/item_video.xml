@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="video"
+            type="com.example.administrator.kiravideoplayer.videoList.video.Video"></variable>
+
+    </data>
+    
+    <LinearLayout
+        android:background="#50d4d6d6"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:imageUrl="@{video.getAvatarUrl()}"/>
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:gravity="center|left"
+                    android:textSize="17dp"
+                    android:textColor="#3d92e7"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@{video.getAuthor()}"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="@{video.getTime()}"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="16dp"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{video.getIntroduce()}"
+            style="@style/textStyle" />
+
+        <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/video_layout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:gravity="center"
+            tools:context=".MainActivity" >
+
+            <SurfaceView
+                android:id="@+id/mini_surface"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:firstImageUrl="@{video.getVideoUrl}" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true">
+
+                <LinearLayout
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="16dp">
+
+                    <ImageView
+                        android:src="@drawable/like"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center|left" />
+                    <TextView
+                        android:id="@+id/like_text"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:gravity="center|left"
+                        android:text="@{video.getLike()}"/>
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_gravity="center|left"
+                        android:src="@drawable/hate"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:id="@+id/hate_text"
+                        android:textSize="18sp"
+                        android:layout_marginLeft="6dp"
+                        android:textColor="#ffffff"
+                        android:gravity="center|left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="@{video.getHate()}"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/copy_button"
+                    android:layout_marginLeft="20dp"
+                    android:text="复制链接"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="20dp">
+                </Button>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:src="@drawable/play"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="24dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                app:videoUrl="@{video}"/>
+        </RelativeLayout>
+    </LinearLayout>
+    
+</layout>
+

@@ -1,0 +1,168 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="button"
+            type="com.example.administrator.kiravideoplayer.player.PlayerActivity.ButtonOperation">
+        </variable>
+        <variable
+            name="url"
+            type="String"></variable>
+
+    </data>
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity" >
+
+        <SurfaceView
+            android:id="@+id/surface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+        
+        <LinearLayout
+            android:id="@+id/controllerbar_layout"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            
+            <SeekBar
+                android:id="@+id/play_seekbar"
+                android:max="100"
+                android:progress="20"
+                android:secondaryProgress="70"
+                android:progressDrawable="@drawable/seekbar_style"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+            
+            <RelativeLayout
+                android:id="@+id/menu_layout"
+                android:gravity="center_vertical"
+                android:background="#101010"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/left_layout"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/pause_img"
+                        android:layout_marginLeft="16dp"
+                        android:background="@drawable/pause_button_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{ () -> button.setPre()}"/>
+
+                    <TextView
+                        android:id="@+id/time_now_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00:00"
+                        android:textColor="#ffffff"
+                        android:textSize="14dp"
+                        android:layout_marginLeft="32dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/"
+                        android:textColor="#bdbdbd"
+                        android:scrollbarSize="14dp"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:id="@+id/time_total_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00:00"
+                        android:textColor="#bdbdbd"
+                        android:scrollbarSize="14dp"
+                        android:layout_marginLeft="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center_vertical|right"
+                    android:layout_toRightOf="@+id/left_layout"
+                    android:orientation="horizontal"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true">
+
+                    <ImageView
+                        android:id="@+id/last"
+                        android:src="@drawable/last"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> button.setLast()}"/>
+
+                    <ImageView
+                        android:id="@+id/stop"
+                        android:src="@drawable/stop"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> button.setStop()}"/>
+
+                    <ImageView
+                        android:id="@+id/next"
+                        android:src="@drawable/next"
+                        android:layout_marginRight="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> button.setNext()}"/>
+
+                    <ImageView
+                        android:id="@+id/violence"
+                        android:src="@drawable/volume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <SeekBar
+                        android:id="@+id/violence_seekbar"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/seekbar_style"
+                        android:layout_width="100dp"
+                        android:layout_height="5dp" />
+                    
+                    <View
+                        android:background="#000000"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp">
+                    </View>
+
+                    <ImageView
+                        android:id="@+id/download"
+                        android:src="@drawable/download"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> button.setDownLoad()}"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
