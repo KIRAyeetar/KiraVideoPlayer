@@ -6,8 +6,8 @@
   
 
   这是主界面<br>
-![](https://github.com/KIRAyeetar/Zhihu-Daily/raw/master/Gif/start.gif)<br> <br>
+![](https://github.com/KIRAyeetar/KiraVideoPlayer/raw/master/Images/main.png)<br> <br>
   这是播放器<br>
-![](https://github.com/KIRAyeetar/Zhihu-Daily/raw/master/Gif/log.gif)<br> <br>
+![](https://github.com/KIRAyeetar/KiraVideoPlayerraw/master/Images/video.png)<br> <br>
   这是播放记录（暂只能重新播放）<br>
-![](https://github.com/KIRAyeetar/Zhihu-Daily/raw/master/Gif/newsContent1.gif)<br>  <br>
+![](https://github.com/KIRAyeetar/KiraVideoPlayerraw/master/Images/recordings.png)<br>  <br>
